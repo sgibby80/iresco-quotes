@@ -1,0 +1,45 @@
+<div class="col-sm-1"></div>
+  <div class="col-sm-6">
+
+
+
+<%= form_for @quote do |f| %>
+
+
+<p>
+  <%= f.select(:client, ['NWL', 'AAA' , 'BELAIR', 'Hanley Steel', 'Red Iron', 'Spartan Steel', 'Waiward', 'Rampart', 'Spartan', 'Whistler', 'East Coast Metal', 'Supreme', 'TSE', 'Leder', 'Empire' , 'Klondike', 'BRT', 'Metal Fab'], {},) %>
+  </p>
+  <p>
+    <%= f.label "Project" %><br>
+    <%= f.text_field :name %>
+  </p>
+
+ 
+    <p>
+    <%= f.label "Price - Do not add $" %><br>
+    <%= f.text_area :price %>
+  </p>
+  
+      <p>
+    <%= f.label "Time hours estimate - Numbers only" %><br>
+    <%= f.number_field :estimate %>
+  </p>
+  
+  
+    <p>
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </p>
+
+      <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+   
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', quotes_path %>
+</div>
+</br>

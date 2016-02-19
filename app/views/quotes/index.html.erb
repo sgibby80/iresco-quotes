@@ -1,0 +1,52 @@
+<%= render 'nav' %>
+
+<div class="row">
+  
+ 
+<div class="col-lg-8 well" align="center" padding="15">
+           
+
+<table border=1 padding=13 width=75%>
+  <tr>
+    <th>Client</th>
+    <th>Project</th>
+    <th>Hours(est.)</th>
+    <th>Price</th>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Awarded</th>
+     <th>ID</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    
+   
+  </tr>
+  
+  <% @quotes.each do |quote| %>
+   
+    <tr>
+      <td><%= quote.client %></td>
+      <td><%= link_to quote.name, quote_path(quote) %></td>
+      <td><%= quote.estimate %> hrs</td>
+      <td>$<%= quote.price %></td>
+      <td><%= quote.date %></td>
+      <td><%= simple_format(quote.description) %></td>
+      <% if quote.awarded %>
+      <td style="background-color:#00FF00" >Yes </td>
+       <% else %>
+       <td></td>
+       <% end %>  
+      <td>16-00<%= quote.id %></td>
+      <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
+      <td><%= link_to 'Destroy', quote_path(quote), 
+      method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+</div>
+</div>
+
+
+

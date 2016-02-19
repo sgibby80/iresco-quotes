@@ -1,0 +1,21 @@
+<%= render 'nav' %>
+<p></p></br></br>
+
+    
+<h1 class="bg-warning">Editing Quote</h1>
+<%= render 'form' %>
+
+
+
+
+<%= form_for @quote do |f| %>
+ <%= f.label "Actual Hours - update this seperate" %><br>
+    <%= f.number_field :actualhrs %></br>
+    
+    <%= f.label "Awarded Job?" %>
+    <%= f.check_box :awarded %>
+   
+    <%= f.submit %>
+    <% end %>
+
+

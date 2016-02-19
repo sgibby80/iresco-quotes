@@ -1,0 +1,77 @@
+<%= render 'nav' %>
+<p></p></br></br>
+
+<div class="col-sm-1"></div>
+  <div class="col-sm-6"><h1 class="bg-primary"><%= @quote.name %> 16-00<%= @quote.id %></h1> 
+   
+     
+<p></p>
+  <strong>Client:</strong>
+  <%= @quote.client %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  $<%= @quote.price %>
+</p>
+
+
+
+
+<p>
+  <strong>Awarded:</strong>
+  
+  <% if @quote.awarded %>
+   <h4 class="bg-success">Awarded</h4>
+<% else %> 
+    <h4 class="bg-danger">Not Awarded</h4>
+<% end %>
+  
+
+
+</p>
+
+
+
+<p>
+  <strong>Estimate Hours:</strong>
+  <%= @quote.estimate %> hrs.
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= simple_format(@quote.description) %>
+</p>
+<p>
+<strong>Actual Hours:</strong>
+
+      <% if @quote.actualhrs? %>
+ <% if @quote.actualhrs > @quote.estimate %>
+ <h4 class="bg-danger"><%= @quote.actualhrs %>. This job is <%= @quote.actualhrs - @quote.estimate %> hrs above estimate!</h4>
+ <% elsif %>
+ <% @quote.actualhrs < @quote.estimate %>
+ <h4 class="bg-success"><%= @quote.actualhrs %>. This job is <%= @quote.estimate - @quote.actualhrs %> hrs below estimate!</h4>
+ <% else %>
+ <%= @quote.actualhrs %>
+
+<% end %>
+        <% end %>
+
+</p>
+<%= link_to 'Edit', edit_quote_path %></br>
+<%= link_to 'Back', quotes_path %></br>
+<b>Email Quote:</b>
+<%= link_to 'Email' , 'mailto:fab0@ricator.com?Subject=Quote&body=Price to detail steel, NIC Joists, Decking, Eng. Design, NIC GST Nest' %>
+
+
+</div></div>
+
+  <div class="col-sm-5"></div>
+</div>
+
+</div>
+
+</div>
+
+
+  
