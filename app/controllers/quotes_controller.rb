@@ -1,6 +1,6 @@
 class QuotesController < ApplicationController
   http_basic_authenticate_with name: "iresco", password: "94iresc094$",
- 
+  except: [:index, :show]
   
 
   
