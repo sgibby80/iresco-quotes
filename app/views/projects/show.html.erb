@@ -1,0 +1,49 @@
+<%= render 'nav' %>
+<p></p></br></br>
+
+<div class="col-sm-1"></div>
+  <div class="col-sm-6"><h1 class="bg-primary"><%= @project.jobno %></h1> 
+   
+     
+
+<p>
+  <strong>Job Name:</strong>
+  $<%= @project.jobname %>
+</p>
+<p>
+  <strong>Price:</strong>
+  $<%= @project.price %>
+</p>
+
+<p>
+  <strong>WEight(kgs):</strong>
+  $<%= @project.weightkgs %>
+</p>
+
+<p>
+  <strong>WEight(lbs):</strong>
+  $<%= @project.weightlbs %>
+</p>
+
+
+<p>
+  <strong>Description:</strong>
+  <%= simple_format(@project.description) %>
+</p>
+<p>
+
+<%= link_to 'Edit', edit_project_path %></br>
+<%= link_to 'Back', project_path %></br>
+
+
+</div></div>
+
+  <div class="col-sm-5"></div>
+</div>
+
+</div>
+
+</div>
+
+
+  

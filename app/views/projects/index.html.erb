@@ -1,0 +1,57 @@
+<%= render 'nav' %>
+
+<div class="row">
+  
+ 
+<div class="col-lg-8 well" align="center" padding="15">
+           
+
+<table border=1 padding=13 width=75%>
+  <tr>
+    <th>JobNo.</th>
+    <th>Client</th>
+    <th>Job Name</th>
+    <th>Weight(Kgs)</th>
+    <th>Weight(Lbs)</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Start Date</th>
+    <th>Description</th>
+    <th>Detail Hours</th>
+    <th>Checking Hours</th>
+    <th>Shop Drawings(Assemb.)</th>
+    <th>E- Drawings</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    
+   
+  </tr>
+  
+  <% @projects.each do |project| %>
+   
+    <tr>
+      <td><%= project.jobno %></td>
+      <td><%= project.client %></td>
+      <td><%= project.jobname %></td>
+      <td>$<%= project.weightlbs %></td>
+      <td><%= project.weightkgs %></td>
+      <td><%= project.price %></td>
+       <td><%= project.startdate %></td>
+      <td><%= simple_format(project.description) %></td>
+       <td><%= project.detailhours %></td>
+       <td><%= project.checkinghours %></td>
+       <td><%= project.shopdwgs %></td>
+       <td><%= project.edwgs %></td>
+     
+      <td><%= link_to 'Edit', edit_project_path(project) %></td>
+      <td><%= link_to 'Destroy', project_path(project), 
+      method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+</div>
+</div>
+
+

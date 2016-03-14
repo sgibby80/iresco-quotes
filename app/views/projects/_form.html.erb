@@ -1,0 +1,68 @@
+<div class="col-sm-1"></div>
+  <div class="col-sm-6">
+
+
+
+<%= form_for @project do |f| %>
+
+   
+ 
+
+<p>
+  
+  </p>
+  <p>
+    <%= f.label "Job No." %><br>
+    <%= f.number_field :jobno %>
+  </p>
+
+ 
+    <p>
+    <%= f.label "Client" %><br>
+    <%= f.text_area :client %>
+  </p>
+  
+      <p>
+    <%= f.label "Job name" %><br>
+    <%= f.text_field :jobname %>
+  </p>
+    <%= f.label "Weight Kgs" %><br>
+    <%= f.number_field :weightkgs %>
+  
+    <p>
+      
+        <%= f.label "Members modeled" %><br>
+    <%= f.number_field  :members %>
+ 
+  </p>
+  
+    <p>
+      
+        <%= f.label "Shop Drawings" %><br>
+    <%= f.number_field  :shopdwgs %>
+ 
+  </p>
+  
+      <p>
+      
+        <%= f.label "E Drawings" %><br>
+    <%= f.number_field  :edwgs %>
+ 
+  </p>
+  
+  
+  
+  
+  <p>
+      <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+   
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', projects_path %>
+</div>
+</br>
